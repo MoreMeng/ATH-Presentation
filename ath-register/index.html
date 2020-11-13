@@ -11,6 +11,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   </style>
   <style>
+    html {
+      height: 100%;
+      overflow: hidden;
+    }
+
     body {
       font-family: 'Mitr', sans-serif;
       color: rgb(49, 49, 49);
@@ -65,16 +70,6 @@
     </div>
   </div>
   <script>
-    Array.prototype.shuffle = function () {
-      let m = this.length,
-        i;
-      while (m) {
-        i = (Math.random() * m--) >>> 0;
-        [this[m], this[i]] = [this[i], this[m]]
-      }
-      return this;
-    }
-    let i = 1; // = 1 because we want to load first color/image onload
     const p = [
       "andrew-coelho-aL7SA1ASVdQ-unsplash.jpg",
       "artur-luczka-loAfOVk1eNc-unsplash.jpg",
@@ -85,17 +80,18 @@
       "pawel-czerwinski-lWBZ01XRRoI-unsplash.jpg",
       "rodion-kutsaev-IJ25m7fXqtk-unsplash.jpg",
       "zhen-hu-dO5quaqAYg0-unsplash.jpg"
-    ].shuffle();
+    ];
+
+    let numberofSlides = p.length;
+    let i = Math.floor((Math.random() * numberofSlides));
+    console.log(i);
+    document.body.style.backgroundImage = `url(images/${p[i]})`;
     change = () => {
       document.body.style.backgroundImage = `url(images/${p[i]})`;
       i = (i + 1) % p.length;
+      console.log(`change ${i}`);
     }
-    var numberofSlides = p.length;
-    var currentSlide = Math.floor((Math.random() * numberofSlides));
-    console.log(currentSlide);
-    document.body.style.backgroundImage = `url(images/${p[currentSlide]})`;
-    setInterval(change,
-      10000);
+    setInterval(change, 30000);
   </script>
 
 </body>
