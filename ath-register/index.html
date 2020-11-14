@@ -11,9 +11,91 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   </style>
   <style>
-    html { height: 100%; overflow: hidden; } body { font-family: 'Mitr', sans-serif; color: rgb(49, 49, 49); background-position: center; background-repeat: no-repeat; background-size: cover; transition: background 2s linear; } h1, h2, h3, h4, h5, h6 { -moz-text-shadow: 1px 1px 5px rgba(0, 0, 0, .8); -webkit-font-smoothing: antialiased; -webkit-text-shadow: 1px 1px 5px rgba(0, 0, 0, .8); text-shadow: 1px 1px 5px rgba(0, 0, 0, .8); font-weight: 600; } @media (min-width: 1400px) { .h2, h2 { font-size: 4vh; } } .container { margin-top: 10%; } .wrapper { background-color: rgba(216, 216, 216, 0.8); }
+    html {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      font-family: 'Mitr', sans-serif;
+      color: rgb(49, 49, 49);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: background 2s linear;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      -moz-text-shadow: 1px 1px 5px rgba(0, 0, 0, .8);
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-shadow: 1px 1px 5px rgba(0, 0, 0, .8);
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, .8);
+      font-weight: 600;
+    }
+
+    @media (min-width: 1400px) {
+
+      .h2,
+      h2 {
+        font-size: 4vh;
+      }
+    }
+
+    .container {
+      margin-top: 10%;
+    }
+
+    .wrapper {
+      background-color: rgba(216, 216, 216, 0.8);
+    }
   </style>
 </head>
 
 <body>
-<div class="container"> <div class="row"> <div class="col-sm-8"> <div class="card text-center wrapper"> <h1 class="display-2 animate__animated animate__headShake animate__slow animate__infinite">REGISTER NOW</h1> <p class="h2 p-5"> ระบบลงทะเบียนผู้ป่วยรายใหม่ออนไลน์ สำหรับผู้ที่ไม่เคยมารับการรักษา และผู้ที่ไม่ได้มารับบริการเกิน 5 ปี หรือท่านที่ไม่แน่ใจว่ายังมีประวัติอยู่หรือไม่ ท่านสามารถกรอกข้อมูลทำประวัติใหม่ออนไลน์ได้ล่วงหน้า 3 วันก่อนมารับบริการ เพียงท่านสแกน QR code </p> </div> </div> <div class="col-sm-4"> <h2 class="display-4 text-white text-center">SCAN ME</h2> <img src="images/QRregis.png" class="rounded mx-auto d-block" alt="" style="width: 100%;"> </div> </div> </div> <script> const p = [ "andrew-coelho-aL7SA1ASVdQ-unsplash.jpg", "artur-luczka-loAfOVk1eNc-unsplash.jpg", "bryce-evans-choc7LYd98I-unsplash.jpg", "jerry-wang-rZle3-WVhwQ-unsplash.jpg", "johannes-plenio-6XUA5KQ9-1k-unsplash.jpg", "josh-calabrese-XXpbdU_31Sg-unsplash.jpg", "pawel-czerwinski-lWBZ01XRRoI-unsplash.jpg", "rodion-kutsaev-IJ25m7fXqtk-unsplash.jpg", "zhen-hu-dO5quaqAYg0-unsplash.jpg" ]; let numberofSlides = p.length; let i = Math.floor((Math.random() * numberofSlides)); console.log(i); document.body.style.backgroundImage = `url(images/${p[i]})`; change = () => { document.body.style.backgroundImage = `url(images/${p[i]})`; i = (i + 1) % p.length; console.log(`change ${i}`); }; setInterval(change, 30000); </script> </body> </html>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="card text-center wrapper p-4">
+          <h1 class="display-2 animate__animated animate__headShake animate__slow animate__infinite">REGISTER NOW</h1>
+          <p class="h2 p-4"> ระบบลงทะเบียนผู้ป่วยออนไลน์ สำหรับผู้ที่ไม่เคยมารับการรักษา และผู้ที่ไม่ได้มารับบริการเกิน 5 ปี แค่สแกน QR Code กรอกข้อมูลให้ครบถ้วน ก่อนมารับบริการ 3 วัน มาถึงไม่ต้องกรอกซ้ำยื่นบัตรประชาชนได้เลย</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <img src="images/QRregis.png" class="rounded mx-auto d-block" alt="" style="width: 100%;">
+      </div>
+    </div>
+  </div>
+  <script>
+    const p = [
+      "brigitte-tohm-5lvgkp_xix8-unsplash.jpg",
+      "bruno-emmanuelle-azsk_6IMT3I-unsplash.jpg",
+      "camilo-jimenez-vGu08RYjO-s-unsplash.jpg",
+      "deniz-altindas-t1XLQvDqt_4-unsplash.jpg",
+      "jonas-vincent-xulIYVIbYIc-unsplash.jpg",
+      "limor-zellermayer-COzpvQtcqMA-unsplash.jpg",
+      "marek-levak-KOID4ns1Ii4-unsplash.jpg",
+      "milada-vigerova-RYiiKQzYjmw-unsplash.jpg",
+      "myles-tan-WNAO036c6FM-unsplash.jpg",
+      "national-cancer-institute-NFvdKIhxYlU-unsplash.jpg",
+      "paige-cody-bOVZ_f3fbQM-unsplash.jpg",
+      "ramiz-dedakovic-9SWHIgu8A8k-unsplash.jpg"
+    ];
+    let numberofSlides = p.length;
+    let i = Math.floor((Math.random() * numberofSlides));
+    console.log(i);
+    document.body.style.backgroundImage = `url(images/${p[i]})`;
+    change = () => {
+      document.body.style.backgroundImage = `url(images/${p[i]})`;
+      i = (i + 1) % p.length;
+      console.log(`change ${i}`);
+    };
+    setInterval(change, 30000);
+  </script>
+</body>
+
+</html>
