@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sliderr</title>
+  <style>
+    body {
+      background: black;
+    }
+
+    iframe {
+      width: 960px;
+      height: 540px;
+      overflow: hidden;
+      /* padding: 2px 0 1px 2px;
+      background: rgb(0, 0, 0); */
+    }
+
+    iframe::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <iframe id="frame" scrolling="no" id="screen_frame" src="" allowfullscreen="true" mozallowfullscreen="true" width="960" height="540" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+  <script>
+    const lists = [
+      'http://ath7/presentation/slideshow/',
+      'http://ath7/presentation/ath-register/',
+      'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FAngthongHospital%2Fposts%2Fpfbid0PebYTpGnLpAugy7Jq1nAP4v2HjstncDMCMYZ6ag1Vf3Yz2AmDcojgtjwABRehxPql&show_text=true&width=500',
+      'https://www.youtube.com/embed/FVyNgLgntr8?autoplay=1&mute=1&controls=0&loop=1',
+      'https://www.youtube.com/embed/txdFZexjY1g?autoplay=1&mute=1&controls=0&loop=1',
+      'https://docs.google.com/presentation/d/e/2PACX-1vRTwgjrU-SQVa2-K7cVkgMPem3ILByOPJnAzf5QLJFfSxWjlDY3DuWcjwRxoDGi-dZshCE797TScUan/embed?start=true&loop=true&delayms=10000&rm=minimal',
+    ];
+
+    const limit = lists.length;
+
+    const frame = document.getElementById("frame");
+    let i = 0;
+    let url = '';
+    let loop = 2; //Circle for reload
+
+    const loopPlay = () => {
+
+      if (loop === 0) {
+        window.location.reload();
+      }
+
+      index = (i < limit) ? i : 0;
+      i = (i < limit) ? ++i : 0;
+      url = lists[index];
+
+      frame.src = url;
+
+      if (i == limit) {
+        loop--;
+      }
+
+      console.log(`Loop ${loop}: ${index} ${i}`);
+    }
+
+    setInterval(() => {
+      loopPlay()
+    }, 60 * 60 * 5);
+
+    loopPlay();
+  </script>
+</body>
+
+</html>
